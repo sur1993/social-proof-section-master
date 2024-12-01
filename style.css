@@ -1,0 +1,243 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+  :root{
+    --clr-primary-900: hsl(300, 43%, 22%);
+    --clr-primary-400: hsl(333, 80%, 67%);
+
+    --clr-neutral-900: hsl(303, 10%, 53%);
+    --clr-neutral-400: hsl(300, 24%, 96%);
+
+    --clr-100: hsl(0, 0%, 100%);
+
+    --ff-primary: "League Spartan", sans-serif;
+
+    --fw-700: 700;
+    --fw-500: 500;
+    --fw-400: 400;
+
+    --fs-regular: .9375rem;
+    --fs-large: 2rem;
+    --fs-medium: 1.25rem;
+  }
+
+
+  body{
+    background-color: var(--clr-100);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-regular);
+    color: var(--clr-neutral-900);
+    font-weight: var(--fw-400);
+
+    background-image: url("./images/bg-pattern-top-mobile.svg"), url("./images/bg-pattern-bottom-mobile.svg");
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+ .grid{
+  display:grid;
+ }
+
+ .flex{
+  display: flex;
+ }
+
+ .wrapper{
+  padding: 2rem;
+  gap: 3rem;
+ }
+
+ .info .heading{
+  color: var(--clr-primary-900);
+  font-size: var(--fs-large);
+  font-weight: var(--fw-700);
+  text-align: center;
+  line-height: 1;
+ }
+
+ .info .detail{
+  padding-block: 2rem;
+  text-align: center;
+  font-size: var(--fs-medium);
+ }
+
+ .ratings_wrapper{
+  flex-direction: column;
+  gap: 1rem;
+ }
+
+ .rating{
+  flex-direction: column;
+  text-align: center;
+  gap: .5rem;
+  background-color: var(--clr-neutral-400);
+  padding-block: .5rem;
+  border-radius: 10px;
+ }
+
+ .rating_icons{
+  justify-content: center;
+  gap: 10px;
+ }
+
+ .rating span{
+  color: var(--clr-primary-900);
+  font-weight: var(--fw-700);
+ }
+
+ .comment_section{
+  gap: 1rem;
+ }
+
+ .comment_capsul{
+  background-color: var(--clr-primary-900);
+  color: var(--clr-neutral-400);
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+ }
+
+ .userdetails{
+  gap: 1rem;
+ }
+
+ .userdetails .avatar{
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img{
+  max-height: 3rem;
+}
+
+.userdetails .user_name{
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-700);
+}
+
+.userdetails .user_status{
+  color: var(--clr-primary-400);
+}
+
+@media (min-width:700px) {
+  :root{
+    --fs-regular: 1rem;
+    --fs-large: 2.5rem;
+    --fs-medium: 1.25rem;
+  }
+}
+
+@media (min-width:1200px) {
+  :root{
+    --fs-regular: 1rem;
+    --fs-large: 3.5rem;
+    --fs-medium: 1.25rem;
+  }
+
+  body{
+    background-image: url("./images/bg-pattern-top-desktop.svg"), url("./images/bg-pattern-bottom-desktop.svg");
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .wrapper{
+    padding: 8rem 10rem 0 10rem;
+  }
+
+  .info_section{
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .info .heading{
+    text-align: left;
+}
+.info .detail{
+  text-align: left;
+}
+.ratings_wrapper{
+  padding-top: 3rem;
+}
+
+.rating{
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem 1rem 2rem ;
+}
+.rating[data-rating="review"]{
+  align-self: flex-start;
+}
+.rating[data-rating="report"]{
+  align-self: center;
+}
+.rating[data-rating="tech"]{
+  align-self: flex-end;
+}
+
+.comment_section{
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+.comment_capsul{
+  padding: 1.5rem;
+  align-self: start;
+}
+.comment_capsul[data-comment="comment-2"]{
+  margin-top: 3rem;
+}
+
+.comment_capsul[data-comment="comment-3"]{
+  margin-top: 6rem;
+}
+
+}
+
+@media (min-width:1500px) {
+  :root{
+    --fs-regular: 1.125rem;
+    --fs-large: 4rem;
+    --fs-medium: 1.5rem;
+  }
+}
