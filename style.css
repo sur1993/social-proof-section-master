@@ -176,13 +176,14 @@
   }
 
   body{
+    height: 100vh;
     background-image: url("./images/bg-pattern-top-desktop.svg"), url("./images/bg-pattern-bottom-desktop.svg");
     background-position: left top, right bottom;
     background-repeat: no-repeat, no-repeat;
   }
 
   .wrapper{
-    padding: 8rem 10rem 0 10rem;
+    padding: 8rem 10rem 0rem 10rem;
   }
 
   .info_section{
@@ -225,11 +226,11 @@
   align-self: start;
 }
 .comment_capsul[data-comment="comment-2"]{
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 .comment_capsul[data-comment="comment-3"]{
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 }
